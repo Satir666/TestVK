@@ -108,14 +108,12 @@
                   loadingBar.style.display = "none";
                   fullscreenButton.onclick = () => {
                       unityInstance.SetFullscreen(1);
-                    
-                    src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
-                    vkBridge.send('VKWebAppInit');
-                    unityInstance.SendMessage('VK', 'B');
-                    unityInstance.SendMessage('VK', 'B');
-          vkBridge.send('VKWebAppGetUserInfo').then(_info => {
-              console.log(_info);
-              unityInstance.SendMessage('VK', 'A', JSON.stringify(_info));
+                      src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js";
+                      vkBridge.send('VKWebAppInit');
+                      unityInstance.SendMessage('VK', 'B');
+                      vkBridge.send('VKWebAppGetUserInfo').then(_info => {
+                      console.log(_info);
+                      unityInstance.SendMessage('VK', 'A', JSON.stringify(_info));
           }
                   };
               }).catch((message) => {
@@ -123,6 +121,7 @@
               });
           };
           document.body.appendChild(script);
+
       </script>
   </body>
 </html>
