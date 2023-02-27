@@ -115,6 +115,18 @@
           };
           document.body.appendChild(script);
       </script>
-  <div style="border:solid 1px black; width:200px; height:300px; margin:auto; text-align:center" onclick="">RED</div>
+    
+  <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
+  <script type="text/javascript">
+    vkBridge.send('VKWebAppInit');
+    
+    function auth()
+    {
+              vkBridge.send('VKWebAppGetUserInfo').then(_info => {
+            console.log(_info);
+            unityI.SendMessage('VK', 'A', JSON.stringify(_info));
+    }
+    
+  <div style="border:solid 1px black; width:200px; height:300px; margin:auto; text-align:center" onclick="auth()">RED</div>
   </body>
 </html>
