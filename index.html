@@ -122,6 +122,8 @@
           vkBridge.send('VKWebAppInit');
       </script>
 
+    <button type="submit" name="submit_button" value="main_button">Отправить</button>
+    
       <script>
           unityInstance.SendMessage('VK', 'B');
           vkBridge.send('VKWebAppGetUserInfo').then(_info => {
