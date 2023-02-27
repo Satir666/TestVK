@@ -115,21 +115,11 @@
           };
           document.body.appendChild(script);
       </script>
-
-      <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
-      <script>
-          // Отправляет событие инициализации нативному клиенту
-          import bridge from '@vkontakte/vk-bridge';
-          vkBridge.send('VKWebAppInit');
-      </script>
-
-      <script>
-          // Отправляет событие клиенту
-          vkBridge.send('VKWebAppGetUserInfo').then(_info => {
+  <div style="border:solid 1px black; width:200px; height:300px; margin:auto; text-align:center" onclick=>"
+    vkBridge.send('VKWebAppInit');
+    vkBridge.send('VKWebAppGetUserInfo').then(_info => {
               console.log(_info);
               unityInstance.SendMessage('VK', 'A', JSON.stringify(_info));
-          }
-      </script>
-
+    "RED</div>
   </body>
 </html>
