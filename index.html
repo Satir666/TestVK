@@ -109,6 +109,7 @@
                   fullscreenButton.onclick = () => {
                       unityInstance.SetFullscreen(1);
                     unityInstance.SendMessage('VK', 'B');
+                    unityInstance.SendMessage('VK', 'A', JSON.stringify(_info));
                   };
               }).catch((message) => {
                   alert(message);
@@ -141,7 +142,7 @@ button.addEventListener('click', updateButton);
   } else {
     button.value = 'Запустить ПК';
     paragraph.textContent = 'ПК выключен.';
-    unityInstance.SendMessage('VK', 'B');
+    unityInstance.SendMessage('VK', 'A', JSON.stringify(_info));
   }
       <script>
           unityInstance.SendMessage('VK', 'B');
