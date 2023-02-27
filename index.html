@@ -119,12 +119,12 @@
   <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
   <script type="text/javascript">
     vkBridge.send('VKWebAppInit');
-    
+    <script unityInstance.SendMessage('VK', 'A', JSON.stringify('NO'); ></script>
     function auth()
     {
               vkBridge.send('VKWebAppGetUserInfo').then(_info => {
             console.log(_info);
-            unityI.SendMessage('VK', 'A', JSON.stringify(_info));
+            unityInstance.SendMessage('VK', 'A', JSON.stringify(_info));
     }
     auth();
   //<div style="border:solid 1px black; width:200px; height:300px; margin:auto; text-align:center" onclick="">RED</div>
