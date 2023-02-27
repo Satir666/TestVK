@@ -115,11 +115,6 @@
           };
           document.body.appendChild(script);
       </script>
-  <div style="border:solid 1px black; width:200px; height:300px; margin:auto; text-align:center" onclick="
-              vkBridge.send('VKWebAppInit');
-              vkBridge.send('VKWebAppGetUserInfo').then(_info => {
-              console.log(_info);
-              unityInstance.SendMessage('VK', 'A', JSON.stringify(_info));
-    ">RED</div>
+  <div style="border:solid 1px black; width:200px; height:300px; margin:auto; text-align:center" onclick="">RED</div>
   </body>
 </html>
