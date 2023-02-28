@@ -15,20 +15,7 @@
 
       function FromUnityToJs ()   // функция вызывается из Unity
       {
-            //alert ("post!");
-              vkBridge.send('VKWebAppShowWallPostBox', {
-              message: 'Первая запись на стене!'
-              })
-              .then((data) => {
-                if (data.post_id) {
-                  // Запись размещена
-                  console.log ("ok");
-                }
-              })
-              .catch((error) => {
-                // Ошибка
-                console.log(error);
-              });
+            alert ("post!");
       }
 
       function BBB()    // функция вызывается из Unity
@@ -41,9 +28,6 @@
 
       jQuery(document).ready(function($) // страница прогружена
       {
-
-            vkBridge.send('VKWebAppInit');
-
       });
 
 
