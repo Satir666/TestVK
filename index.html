@@ -17,14 +17,14 @@
       {
             vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
               console.log(_info);
-              unityI.SendMessage('JS','SetName', "" + _info.first_name);
+              unityI.SendMessage('JS','SetName', _info.first_name);
             });
       }
       function JS_SurName()
       {
             vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
               console.log(_info);
-              unityI.SendMessage('JS','SetSurName', _info.first_name);
+              unityI.SendMessage('JS','SetSurName', _info.last_name);
             });
       }  
       function JS_Data()
@@ -38,7 +38,7 @@
       {
             vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
               console.log(_info);
-              unityI.SendMessage('JS','SetCity', "" + _info.city.id);
+              unityI.SendMessage('JS','SetCity', "" + _info.city.title);
             });
       }  
       jQuery(document).ready(function($) // страница прогружена
