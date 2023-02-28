@@ -37,7 +37,7 @@
             vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
               console.log(_info);
               alert ("" + _info.first_name);
-              unityI.SendMessage('MainScript','NAME2', "V " + _info.sex);
+              unityI.SendMessage('MainScript','NAME2', "" + _info.bdate);
             });
       }
   
