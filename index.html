@@ -37,17 +37,13 @@
             vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
               console.log(_info);
               alert ("" + _info.first_name);
+              unityI.SendMessage('MainScript','NAME2', _info.first_name);
             });
       }
-
-      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Lesson_build.json", {onProgress: UnityProgress}); // запуск unity на странице
-
-
+  
       jQuery(document).ready(function($) // страница прогружена
       {
-
             vkBridge.send('VKWebAppInit');
-
       });
 
 
@@ -146,13 +142,14 @@
       }
 
       loadingBar.style.display = "block";
-
+      var unityI = null;
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
+          unityI = unityInstance;
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
