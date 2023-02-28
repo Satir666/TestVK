@@ -36,7 +36,7 @@
             //alert ("BBB!");
             vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
               console.log(_info);
-              alert ("" + _info[0]);
+              alert ("" + _info.first_name);
             });
       }
 
