@@ -13,34 +13,34 @@
 
 <script>
 
-      function FromUnityToJs ()   // функция вызывается из Unity
+      function JS_Name()
       {
-            //alert ("post!");
-              vkBridge.send('VKWebAppShowWallPostBox', {
-              message: 'Первая запись на стене!'
-              })
-              .then((data) => {
-                if (data.post_id) {
-                  // Запись размещена
-                  console.log ("ok");
-                }
-              })
-              .catch((error) => {
-                // Ошибка
-                console.log(error);
-              });
-      }
-
-      function BBB()    // функция вызывается из Unity
-      {
-            //alert ("BBB!");
             vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
               console.log(_info);
-              alert ("" + _info.first_name);
-              unityI.SendMessage('MainScript','NAME2', "" + _info.bdate);
+              unityI.SendMessage('JS','SetName', "" + _info.first_name);
             });
       }
-  
+      function JS_SurName()
+      {
+            vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
+              console.log(_info);
+              unityI.SendMessage('JS','SetSurName', "" + _info.first_name);
+            });
+      }  
+      function JS_Data()
+      {
+            vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
+              console.log(_info);
+              unityI.SendMessage('JS','SetData', "" + _info.bdate);
+            });
+      }
+      function JS_City()
+      {
+            vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
+              console.log(_info);
+              unityI.SendMessage('JS','SetCity', "" + _info.city.title);
+            });
+      }  
       jQuery(document).ready(function($) // страница прогружена
       {
             vkBridge.send('VKWebAppInit');
