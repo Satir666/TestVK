@@ -33,11 +33,7 @@
 
       function BBB()    // функция вызывается из Unity
       {
-            //alert ("BBB!");
-            vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
-              console.log(_info);
-            unityInstance.SendMessage('MainScript', 'NAME', JSON.stringify(_info));
-            });
+            alert ("BBB!");
       }
 
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Lesson_build.json", {onProgress: UnityProgress}); // запуск unity на странице
