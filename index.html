@@ -24,7 +24,7 @@
       {
             vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
               console.log(_info);
-              unityI.SendMessage('JS','SetSurName', "" + _info.first_name);
+              unityI.SendMessage('JS','SetSurName', _info.first_name);
             });
       }  
       function JS_Data()
@@ -38,7 +38,7 @@
       {
             vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
               console.log(_info);
-              unityI.SendMessage('JS','SetCity', "" + _info.city.title);
+              unityI.SendMessage('JS','SetCity', "" + _info.city.id);
             });
       }  
       jQuery(document).ready(function($) // страница прогружена
