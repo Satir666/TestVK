@@ -43,6 +43,7 @@
             vkBridge.send('VKWebAppStorageGet',{"key": ["_save"]}).then(data =>{
               console.log(data);
               unityI.SendMessage('JS','Load', data);
+              alert ("" + data);
             });
       }     
         function JS_Save (data)
