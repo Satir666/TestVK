@@ -34,18 +34,18 @@
               unityI.SendMessage('JS','SetData', "" + _info.bdate);
             });
       }
-        function JS_()
+        function JS_City()
       {
             vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
               console.log(_info);
               unityI.SendMessage('JS','SetCity', "" + _info.city.title);
             });
       }
-      function JS_City()
+      function JS_Load ()
       {
             vkBridge.send('VKWebAppStorageGet',{"keys": ["_save"]}).then(data =>{
               console.log(data);
-              unityI.SendMessage('JS','Load', Integer.parseInt(data.keys[0].value));
+              unityI.SendMessage('JS','USE_Load', data.keys[0].value);
               alert ("" + data.keys[0].value);
             });
         
