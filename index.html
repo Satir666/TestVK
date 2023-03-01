@@ -45,15 +45,15 @@
       {
             vkBridge.send('VKWebAppStorageGet',{"keys": ["_save"]}).then(data =>{
               console.log(data);
-              unityI.SendMessage('JS','Load', data);
-              alert ("" + data);
+              unityI.SendMessage('JS','Load', data[0].value);
+              alert ("" + data[0].value);
             });
         
       }     
         function JS_Save (data)
       {
             alert ("" + data);
-            vkBridge.send('VKWebAppStorageSet',{"key": "_save" , "value": data}).then(_info =>{
+            vkBridge.send('VKWebAppStorageSet',{"key": "_save" , "value": "" + data}).then(_info =>{
               console.log("Saved");
             });
       } 
