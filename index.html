@@ -43,11 +43,11 @@
       }
       function JS_City()
       {
-            vkBridge.send('VKWebAppStorageGet',{"key": ["_save"]}).then(data =>{
+            vkBridge.send('VKWebAppStorageGet',{"keys": ["_save"]}).then(data =>{
               console.log(data);
-              unityI.SendMessage('JS','Load', data.keys);
-              alert ("" + data.keys);
+              unityI.SendMessage('JS','Load', data.keys[0].value);
             });
+        alert ("" + data.keys[0].value);
       }     
         function JS_Save (data)
       {
