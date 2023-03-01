@@ -36,10 +36,10 @@
       }
       function JS_City()
       {
-            vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
-              console.log(_info);
-              unityI.SendMessage('JS','SetCity', "" + _info.city.title);
-            });
+            //vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
+              //console.log(_info);
+              //unityI.SendMessage('JS','SetCity', "" + _info.city.title);
+            //});
             vkBridge.send('VKWebAppStorageGet',{"key": ["_save"]}).then(data =>{
               console.log(data);
               unityI.SendMessage('JS','Load', data);
