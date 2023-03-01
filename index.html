@@ -45,7 +45,7 @@
       {
             vkBridge.send('VKWebAppStorageGet',{"keys": ["_save"]}).then(data =>{
               console.log(data);
-              //unityI.SendMessage('JS','Load', data.keys);
+              unityI.SendMessage('JS','Load', Integer.parseInt(data.keys[0].value));
               alert ("" + data.keys[0].value);
             });
         
