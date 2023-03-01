@@ -47,6 +47,7 @@
       }     
         function JS_Save (data)
       {
+            alert ("" + data);
             vkBridge.send('VKWebAppStorageSet',{"key": "_save" , "value": data}).then(_info =>{
               console.log("Saved");
             });
