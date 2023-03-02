@@ -18,6 +18,7 @@
             vkBridge.send('VKWebAppGetUserInfo').then(_info =>{
               console.log(_info);
               unityI.SendMessage('JS','SetName', _info.first_name);
+              unityI.SendMessage('JS','AVA', _info.photo_200);
             });
       }
       function JS_SurName()
