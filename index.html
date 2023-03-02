@@ -52,13 +52,19 @@
       }    
         function JS_Reklama ()
       {
-            vkBridge.send('VKWebAppShowNativeAds', {
-              ad_format: 'interstitial'}).then( (data) => { 
-                if (data.result) {
-                  unityI.SendMessage('JS','Reklama_Coin', "100");
-              } else {}}).catch((error) => { console.log(error); });         
-            }); 
+        vkBridge.send('VKWebAppShowNativeAds', {
+  ad_format: 'interstitial' /* Тип рекламы */
+  })
+  .then( (data) => { 
+    if (data.result) {
+      unityI.SendMessage('JS','Reklama_Coin', "100");
+    } else {
+      // Ошибка
+    }
+  })
+  .catch((error) => { console.log(error); });
       }  
+  
         function JS_Save (data)
       {
             //alert ("" + data);
